@@ -12,7 +12,6 @@
     <PackageDescription>Extension to convert decimal to integer</PackageDescription>
     <Description>Extension to convert decimal to integer</Description>
     <RepositoryUrl>https://github.com/Leandromenezes1/money-extension</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Leandromenezes1/money-extension</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <PackageTags>money;int;decimal;converter</PackageTags>
