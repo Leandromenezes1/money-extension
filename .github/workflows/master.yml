@@ -5,12 +5,17 @@ on:
     branches:
       - master
 
+permissions:
+  packages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@master
+        with:
+          repo-token: ${{ secrets.NUGET_TOKEN }}
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v3
@@ -27,4 +32,4 @@ jobs:
         run: dotnet pack --configuration Release
 
       - name: Publish
-        run: dotnet nuget push "src/MoneyExtension/bin/Release/*.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json
